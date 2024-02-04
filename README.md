@@ -4,7 +4,9 @@ A Music Player in which you can control audio player by shaking device in a part
 
 To play/pause the current audio file, you can shake the device from center to back, like in video below.
 
-![](preview/play_pause.mp4)
+https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/eef61a0d-f993-45bf-9d55-3fbb759939f0
+
+pause.mp4)
 
 To change speed of the current audio file, you can shake the device, like in video below.
 - center to left to decrease the speed
