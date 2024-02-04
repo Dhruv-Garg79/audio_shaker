@@ -25,7 +25,7 @@ class HomeView extends StatelessWidget {
               ) {
                 final length = viewModel.sounds.length + (viewModel.isBusy ? 1 : 0);
                 return viewModel.sounds.isEmpty
-                    ? const Center(child: CircularProgressIndicator())
+                    ? const Center(child: CircularProgressIndicator.adaptive())
                     : ListView.separated(
                         controller: viewModel.scrollController,
                         itemBuilder: (ctx, index) {

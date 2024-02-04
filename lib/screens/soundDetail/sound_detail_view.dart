@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:audio_shaker/models/sound_model.dart';
 import 'package:audio_shaker/screens/soundDetail/sound_detail_viewmodel.dart';
+import 'package:audio_shaker/widgets/small_duration_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:just_audio/just_audio.dart';
@@ -29,7 +30,7 @@ class SoundDetailView extends StatelessWidget {
               Widget? child,
             ) {
               return model.isBusy
-                  ? const Center(child: CircularProgressIndicator())
+                  ? const Center(child: CircularProgressIndicator.adaptive())
                   : Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -94,20 +95,8 @@ class SoundDetailView extends StatelessWidget {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      snapshot.data?.toString().substring(6, 9) ?? "",
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
-                                    Text(
-                                      model.player.duration?.toString().substring(6, 9) ?? "",
-                                      style: const TextStyle(
-                                        fontSize: 12,
-                                        color: Colors.grey,
-                                      ),
-                                    ),
+                                    SmallDurationText(duration: snapshot.data),
+                                    SmallDurationText(duration: model.player.duration),
                                   ],
                                 )
                               ],
@@ -173,7 +162,7 @@ class ControlButtons extends StatelessWidget {
                 margin: const EdgeInsets.all(8.0),
                 width: 64.0,
                 height: 64.0,
-                child: const CircularProgressIndicator(),
+                child: const CircularProgressIndicator.adaptive(),
               );
             } else if (playing != true) {
               return IconButton(
