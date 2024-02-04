@@ -6,11 +6,10 @@ To play/pause the current audio file, you can shake the device from center to ba
 
 https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/eef61a0d-f993-45bf-9d55-3fbb759939f0
 
-pause.mp4)
-
 To change speed of the current audio file, you can shake the device, like in video below.
 - center to left to decrease the speed
-TODO: GIF
+
+https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/39f92f37-4a5e-49e7-8d15-11d5c9bb7a20
 
 - center to right to increase the speed
 TODO: GIF
