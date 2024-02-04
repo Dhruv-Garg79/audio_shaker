@@ -9,10 +9,11 @@ https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/eef61a0d-f993-45bf-
 To change speed of the current audio file, you can shake the device, like in video below.
 - center to left to decrease the speed
 
-https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/39f92f37-4a5e-49e7-8d15-11d5c9bb7a20
+https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/0603a374-1e3c-406d-941a-277be4c97757
 
 - center to right to increase the speed
-TODO: GIF
+
+https://github.com/Dhruv-Garg79/audio_shaker/assets/40490622/39f92f37-4a5e-49e7-8d15-11d5c9bb7a20
 
 # Application Folder Structure
 1. app - contains config and setup related files
