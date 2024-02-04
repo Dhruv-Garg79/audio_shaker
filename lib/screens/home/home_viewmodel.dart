@@ -48,5 +48,6 @@ class HomeViewModel extends BaseViewModel {
   @override
   void dispose() {
     scrollController.dispose();
+    super.dispose();
   }
 }

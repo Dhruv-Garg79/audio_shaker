@@ -1,9 +1,8 @@
-import 'package:audio_shaker/app/app.locator.dart';
 import 'package:audio_shaker/app/app.logger.dart';
+import 'package:audio_shaker/models/sound_detail_model.dart';
 import 'package:audio_shaker/models/sound_model.dart';
 import 'package:audio_shaker/resources/dto/sound_list_response.dart';
 import 'package:dio/dio.dart';
-import 'package:logger/logger.dart';
 
 class SoundApiProvider {
   final _logger = getLogger('SoundApiProvider');
@@ -27,5 +26,13 @@ class SoundApiProvider {
       _logger.e(e);
       return [];
     }
+  }
+
+  Future<SoundDetailModel> fetchSoundDetails(int id) async {
+    final response = await _apiClient.get(
+      '$_baseUrl/sounds/$id',
+      queryParameters: {"token": _token},
+    );
+    return SoundDetailModel.fromMap(response.data);
   }
 }

@@ -7,8 +7,7 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:audio_shaker/models/sound_model.dart' as _i5;
 import 'package:audio_shaker/screens/home/home_view.dart' as _i2;
-import 'package:audio_shaker/screens/soundDetail/sound_detail_screen.dart'
-    as _i3;
+import 'package:audio_shaker/screens/soundDetail/sound_detail_view.dart' as _i3;
 import 'package:flutter/material.dart' as _i4;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
