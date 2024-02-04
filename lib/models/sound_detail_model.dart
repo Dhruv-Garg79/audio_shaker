@@ -85,7 +85,7 @@ class SoundDetailModel {
       duration: map['duration']?.toInt() ?? 0,
       samplerate: map['samplerate']?.toInt() ?? 0,
       assetUrl: map['previews']['preview-hq-mp3'] ?? '',
-      imageUrl: map['images']['waveform_l'] ?? '',
+      imageUrl: map['images']['spectral_m'] ?? '',
     );
   }
 

@@ -1,11 +1,12 @@
+import 'dart:math' as math;
+
 import 'package:audio_shaker/app/app.locator.dart';
 import 'package:audio_shaker/app/app.logger.dart';
 import 'package:audio_shaker/models/sound_detail_model.dart';
 import 'package:audio_shaker/respositories/sound_repo.dart';
-import 'package:stacked/stacked.dart';
 import 'package:just_audio/just_audio.dart';
 import 'package:sensors_plus/sensors_plus.dart';
-import 'dart:math' as math;
+import 'package:stacked/stacked.dart';
 
 class acceleration extends BaseViewModel {
   final _logger = getLogger("HomeViewModel");
@@ -50,11 +51,10 @@ class acceleration extends BaseViewModel {
     // angular acceleration along respective axis
     double gx = gEvent.x, gy = gEvent.y, gz = gEvent.z;
     // acceleration along respective axis
-    double ax = aEvent.x, ay = aEvent.y, az = aEvent.z;
+    double ax = aEvent.x, ay = aEvent.y;
 
     if (gx > 5 || gy > 5 || gz > 5) {
-      _logger.d(
-          "g event ${gx.toStringAsFixed(2)} ${gy.toStringAsFixed(2)} ${gz.toStringAsFixed(2)}");
+      _logger.d("g event ${gx.toStringAsFixed(2)} ${gy.toStringAsFixed(2)} ${gz.toStringAsFixed(2)}");
     }
 
     if (DateTime.now().difference(_accUpdateTime) > _accWaitDuration) {
@@ -78,12 +78,8 @@ class acceleration extends BaseViewModel {
       setBusy(false);
     }
 
-    final isLeft = (gz > 6 &&
-        ax < -7 &&
-        ax > -20); // to check if we move from center to left
-    final isRight = (gz < -6 &&
-        ax > 7 &&
-        ax < 20); // to check if we move from center to right
+    final isLeft = (gz > 6 && ax < -7 && ax > -20); // to check if we move from center to left
+    final isRight = (gz < -6 && ax > 7 && ax < 20); // to check if we move from center to right
 
     // for changing speed of the audio loop
     // _accX[0].abs() < 2 -> to check if we start from center
